@@ -1,0 +1,134 @@
+[
+  {
+    "id": "DOC-001",
+    "type": "invoice",
+    "title": "Faktura za hosting",
+    "content": "Usługi hostingowe, marzec",
+    "tags": [
+      "ksiegowosc",
+      "it"
+    ],
+    "pages": 1
+  },
+  {
+    "id": "DOC-002",
+    "type": "contract",
+    "title": "Umowa NDA z Acme",
+    "content": "Strony zobowiązują się do zachowania poufności...",
+    "tags": [
+      "poufne",
+      "prawo"
+    ],
+    "pages": 4
+  },
+  {
+    "id": "DOC-003",
+    "type": "report",
+    "title": "Raport kwartalny Q1",
+    "content": "Przychody wzrosły o 12%...",
+    "tags": [
+      "finanse",
+      "zarzad"
+    ],
+    "pages": 18
+  },
+  {
+    "id": "DOC-004",
+    "type": "invoice",
+    "title": "Faktura za licencje",
+    "content": "",
+    "tags": [
+      "ksiegowosc",
+      "it"
+    ],
+    "pages": 1
+  },
+  {
+    "id": "DOC-005",
+    "type": "contract",
+    "title": "Umowa najmu biura",
+    "content": "Najemca zobowiązuje się...",
+    "tags": [
+      "prawo",
+      "nieruchomosci"
+    ],
+    "pages": 7
+  },
+  {
+    "id": "DOC-006",
+    "type": "report",
+    "title": "Raport RODO",
+    "content": "   ",
+    "tags": [
+      "rodo",
+      "prawo",
+      "poufne"
+    ],
+    "pages": 9
+  },
+  {
+    "id": "DOC-007",
+    "type": "invoice",
+    "title": "Faktura za szkolenie",
+    "content": "Szkolenie z bezpieczeństwa",
+    "tags": [
+      "ksiegowosc",
+      "hr"
+    ],
+    "pages": 2
+  },
+  {
+    "id": "DOC-008",
+    "type": "invoice",
+    "title": "Faktura za catering",
+    "content": "Catering na spotkanie zarządu",
+    "tags": [
+      "ksiegowosc"
+    ],
+    "pages": 1
+  },
+  {
+    "id": "DOC-009",
+    "type": "report",
+    "title": "Raport incydentu bezpieczeństwa",
+    "content": "W dniu 3 lutego wykryto...",
+    "tags": [
+      "it",
+      "poufne"
+    ],
+    "pages": 6
+  },
+  {
+    "id": "DOC-010",
+    "type": "contract",
+    "title": "Umowa o pracę",
+    "content": "Pracodawca zatrudnia...",
+    "tags": [
+      "hr",
+      "poufne",
+      "prawo"
+    ],
+    "pages": 3
+  },
+  {
+    "id": "DOC-011",
+    "type": "invoice",
+    "title": "Faktura za serwis laptopów",
+    "content": "Wymiana baterii, 4 szt.",
+    "tags": [
+      "it",
+      "ksiegowosc"
+    ],
+    "pages": 1
+  },
+  {
+    "id": "DOC-012",
+    "type": "report",
+    "title": "Raport z rekrutacji",
+    "content": "",
+    "tags": [
+      "hr"
+    ],
+    "pages": 5
+  }
+]

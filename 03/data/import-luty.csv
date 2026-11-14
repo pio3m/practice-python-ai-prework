@@ -1,0 +1,6 @@
+number,client,amount,issue_date,due_date,paid
+FV-2025-118,Kancelaria Nowak,2460.00,2025-12-15,2026-01-14,false
+FV-2026-007,Acme sp. z o.o.,1845.50,2026-02-12,2026-03-14,false
+FV-2026-008,Szkoła Językowa Lingua,738.00,2026-02-14,2026-02-28,false
+FV-2026-009,Hotel Pod Lipą,153.75,2026-02-20,2026-03-06,true
+FV-2026-010,Biuro Rachunkowe Żak,615.00,2026-02-25,2026-03-11,false
