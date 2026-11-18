@@ -28,7 +28,7 @@ Twoje zadania:
 Ścieżki buduj przez `pathlib`, tak aby skrypt działał w Windows, Linux i macOS.
 
 **Podpowiedź:**  
-Zajrzyj do dokumentacji `pathlib.Path.glob`, `json.JSONDecodeError`, `csv.DictReader`, `datetime.date.fromisoformat` oraz `json.dump`.
+Zajrzyj do dokumentacji `pathlib.Path.glob`, `json.JSONDecodeError`, `csv.DictReader`, `datetime.date.fromisoformat` oraz `json.dump`. Brakujące pole wykryjesz, porównując zbiór wymaganych kluczy z kluczami wczytanego słownika. Uwaga na kolumnę `paid` w CSV: to tekst, a `bool("false")` daje `True`.
 
 &nbsp;
 

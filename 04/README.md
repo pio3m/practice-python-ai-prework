@@ -24,6 +24,8 @@ Twoim zadaniem jest:
 **Podpowiedź:**  
 Zajrzyj do dokumentacji modułów `dataclasses` (`field`, `default_factory`) i `abc` (`ABC`, `abstractmethod`) oraz dekoratora `@property`. Dekorator `@pytest.fixture` opisuje dokumentacja pytest w rozdziale „How to use fixtures”.
 
+Pole z wartością domyślną w klasie bazowej (`tags`) sprawia, że w klasach pochodnych pole bez wartości domyślnej zgłosi `TypeError: non-default argument ... follows default argument`. Nadaj polom `Invoice` i `Contract` wartości domyślne albo użyj `@dataclass(kw_only=True)`.
+
 &nbsp;
 
 **Prawidłowe odpowiedzi** (data referencyjna: 2026-03-01):
