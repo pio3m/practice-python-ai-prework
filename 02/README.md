@@ -23,7 +23,7 @@ Twoim zadaniem jest:
 - wczytać plik `amounts.txt` (każda linia, również pusta, to jedna pozycja) i odpowiedzieć na pytania poniżej.
 
 **Podpowiedź:**  
-Przydadzą się metody `str.strip`, `str.endswith` i `str.replace`. Sprawdzanie formatu możesz oprzeć na `str.isdigit` albo na module `re` (funkcja `re.fullmatch`). Testy uruchomisz komendą `pytest -v`.
+Przydadzą się metody `str.strip`, `str.endswith` i `str.replace`. Sprawdzanie formatu możesz oprzeć na `str.isdigit` albo na module `re` (funkcja `re.fullmatch`). Testy uruchomisz komendą `pytest -v`. Tych metod i modułu `re` nie było na slajdach: to celowe ćwiczenie w samodzielnym czytaniu dokumentacji Pythona.
 
 &nbsp;
 
