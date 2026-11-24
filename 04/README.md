@@ -4,7 +4,47 @@
 
 # `#04` Model dokumentów firmy
 
-Faktury i umowy różnią się danymi, ale system ma je obsługiwać w jednolity sposób. Twoim zadaniem jest zaprojektować klasy dokumentów, wczytać do nich dane z `documents.json` i przetestować je w pytest.
+System ma obsługiwać faktury i umowy w jednolity sposób. Twoim zadaniem jest napisać jedną prostą klasę dokumentu, wczytać do niej dane z `documents.json` i przetestować ją w pytest.
+
+Każdy dokument w `documents.json` ma pola:
+- `doc_id` – identyfikator (`str`),
+- `kind` – rodzaj: `invoice` albo `contract` (`str`),
+- `title` – tytuł (`str`),
+- `content` – treść (`str`),
+- `amount` – kwota (`float`) dla faktury; dla umowy `null`, czyli w Pythonie `None`.
+
+Twoim zadaniem jest:
+
+- utworzyć plik `documents.py` ze zwykłą klasą `Document` (bez dziedziczenia i bez `@dataclass`): konstruktor `__init__` przyjmuje i zapisuje wszystkie pola, a każde pole ma adnotację typu (`amount: float | None = None`),
+- dodać metodę `summary() -> str`, która zwraca `<doc_id> [<kind>] <title>`, a jeśli dokument ma kwotę, dopisuje `, <kwota> zł` z 2 miejscami po przecinku, np. `FV-001 [invoice] Hosting marzec, 1230.00 zł`,
+- napisać funkcję `load_documents(path: Path) -> list[Document]`, która wczytuje plik JSON i tworzy obiekt `Document` dla każdego słownika,
+- utworzyć plik `test_documents.py` z co najmniej 2 testami: `summary()` dokumentu z kwotą i dokumentu bez kwoty,
+- odpowiedzieć na pytania poniżej.
+
+Pytania:
+
+1. Ile dokumentów wczytano?
+2. Co zwraca `summary()` dla `FV-003`?
+3. Co zwraca `summary()` dla `UM-002`?
+4. Jaka jest suma kwot wszystkich faktur?
+
+**Podpowiedź:**  
+Wróć do slajdów sekcji 0.5 (klasa, `__init__`, `self`, metoda) i 0.7 (test z `assert`). Pamiętaj, że adnotacje typów nie sprawdzają danych: to, czy `amount` jest liczbą, musisz sprawdzić sam, jeśli tego potrzebujesz.
+
+&nbsp;
+
+**Prawidłowe odpowiedzi:**
+
+- **Ad 1:** 5 dokumentów
+- **Ad 2:** `FV-003 [invoice] Licencje IDE, 2951.99 zł`
+- **Ad 3:** `UM-002 [contract] Obsługa prawna`
+- **Ad 4:** 4667.99
+
+&nbsp;
+
+**Rozszerzenie (opcjonalne): klasy abstrakcyjne i dataclass**
+
+Dane do rozszerzenia znajdziesz w `rozszerzenie/documents.json`. Polecenie:
 
 Klasy do utworzenia w pliku `documents.py`:
 
@@ -28,13 +68,14 @@ Pole z wartością domyślną w klasie bazowej (`tags`) sprawia, że w klasach p
 
 &nbsp;
 
-**Prawidłowe odpowiedzi** (data referencyjna: 2026-03-01):
+Odpowiedzi do rozszerzenia (data referencyjna: 2026-03-01):
 
 - **Ad 1:** suma kwot brutto wszystkich faktur: 5545.38
 - **Ad 2:** faktury po terminie: `FV-001`, `FV-004`
 - **Ad 3:** obowiązujące umowy: `UM-001`, `UM-002`
 - **Ad 4:** `summary()` dla `FV-003`: `Faktura FV-003: 2951.99 zł brutto`
 - **Ad 5:** `summary()` dla `UM-002`: `Umowa UM-002 z Kancelaria Nowak: 3500.00 zł`
+
 
 &nbsp;
 > :no_entry: *Jeśli nie posiadasz materiałów do tego zadania tj. **PDF, projekt + Code Review**, znajdziesz je na stronie [devmentor.pl](https://devmentor.pl/workshop-python-ai-prework)*

@@ -22,10 +22,10 @@ Twoje zadania:
 4. Wskaż tag, który występuje najczęściej, i podaj liczbę jego wystąpień.
 5. Policz łączną liczbę stron wszystkich raportów.
 
-Każdy punkt rozwiąż jednym wyrażeniem (comprehension albo funkcją wbudowaną), bez pętli z `append`.
+Możesz używać zwykłych pętli `for` i zmiennych pomocniczych: czytelna pętla jest w pełni poprawnym rozwiązaniem. Comprehension możesz zastosować tam, gdzie jest dla Ciebie czytelne, ale nie jest to wymóg.
 
 **Podpowiedź:**  
-Zajrzyj do dokumentacji `collections.Counter` (metoda `most_common`), zbiorów (`set`) i metody `str.strip`.
+Do zliczania wystarczy słownik i `counts.get(klucz, 0) + 1`. Przydadzą się też zbiory (`set`), funkcja `sorted` i metoda `str.strip`.
 
 &nbsp;
 
@@ -36,6 +36,9 @@ Zajrzyj do dokumentacji `collections.Counter` (metoda `most_common`), zbiorów (
 - **Ad 3:** 9
 - **Ad 4:** `ksiegowosc`, 5 razy
 - **Ad 5:** 38
+
+**Rozszerzenie (opcjonalne):**  
+Gdy masz już poprawne wyniki, rozwiąż każdy punkt jednym wyrażeniem: comprehension, funkcją wbudowaną albo przez `collections.Counter` (metoda `most_common`) i `collections.defaultdict`.
 
 &nbsp;
 > :no_entry: *Jeśli nie posiadasz materiałów do tego zadania tj. **PDF, projekt + Code Review**, znajdziesz je na stronie [devmentor.pl](https://devmentor.pl/workshop-python-ai-prework)*

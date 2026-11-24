@@ -1,34 +1,42 @@
-"""Symulacja zawodnego zewnętrznego API klasyfikującego dokumenty.
+"""Atrapa zewnętrznego API klasyfikującego dokumenty.
 
-Nie modyfikuj tego pliku. Awarie są zapisane na stałe, więc wynik jest
-za każdym razem taki sam.
+Nie modyfikuj tego pliku. Atrapa działa bez internetu: httpx przekazuje
+żądanie do funkcji `handle` zamiast wysyłać je w sieć.
+
+API przyjmuje: POST /classify z nagłówkiem `Authorization: Bearer test-key`
+i ciałem JSON `{"doc_id": "..."}`. Zwraca JSON `{"doc_id": "...", "label": "..."}`.
 """
-import asyncio
+import json
 
-# Ile pierwszych wywołań dla danego dokumentu kończy się ConnectionError.
-FAILURES: dict[str, int] = {
-    "DOC-003": 1,
-    "DOC-007": 2,
-    "DOC-011": 5,
-    "DOC-014": 1,
-    "DOC-018": 3,
-    "DOC-022": 2,
+import httpx
+
+API_URL = "https://api.example.test"
+API_KEY = "test-key"
+
+LABELS = {
+    "DOC-001": "invoice",
+    "DOC-002": "contract",
+    "DOC-003": "report",
+    "DOC-004": "invoice",
 }
-
-LABELS = ("invoice", "contract", "report")
-
-calls: dict[str, int] = {}
+UNAVAILABLE = {"DOC-005"}   # dla tych dokumentów usługa zwraca 503
 
 
-def total_calls() -> int:
-    """Łączna liczba wywołań classify od uruchomienia programu."""
-    return sum(calls.values())
+def handle(request: httpx.Request) -> httpx.Response:
+    if request.method != "POST" or request.url.path != "/classify":
+        return httpx.Response(404, json={"error": "not found"})
+    if request.headers.get("Authorization") != f"Bearer {API_KEY}":
+        return httpx.Response(401, json={"error": "invalid api key"})
+    try:
+        doc_id = json.loads(request.content)["doc_id"]
+    except (ValueError, KeyError, TypeError):
+        return httpx.Response(400, json={"error": "body must be JSON with doc_id"})
+    if doc_id in UNAVAILABLE:
+        return httpx.Response(503, json={"error": "service unavailable"})
+    if doc_id not in LABELS:
+        return httpx.Response(404, json={"error": f"unknown document {doc_id}"})
+    return httpx.Response(200, json={"doc_id": doc_id, "label": LABELS[doc_id]})
 
 
-async def classify(doc_id: str) -> str:
-    calls[doc_id] = calls.get(doc_id, 0) + 1
-    await asyncio.sleep(0.01)
-    if calls[doc_id] <= FAILURES.get(doc_id, 0):
-        raise ConnectionError(f"API niedostępne dla {doc_id}")
-    number = int(doc_id.split("-")[1])
-    return LABELS[number % len(LABELS)]
+def fake_transport() -> httpx.MockTransport:
+    return httpx.MockTransport(handle)

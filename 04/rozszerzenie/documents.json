@@ -1,0 +1,97 @@
+[
+  {
+    "kind": "invoice",
+    "doc_id": "FV-001",
+    "title": "Hosting marzec",
+    "tags": [
+      "it"
+    ],
+    "net_amount": 1000.0,
+    "due_date": "2026-02-10",
+    "paid": false
+  },
+  {
+    "kind": "invoice",
+    "doc_id": "FV-002",
+    "title": "Szkolenie BHP",
+    "tags": [
+      "hr"
+    ],
+    "net_amount": 450.0,
+    "vat_rate": 0.08,
+    "due_date": "2026-03-15",
+    "paid": false
+  },
+  {
+    "kind": "contract",
+    "doc_id": "UM-001",
+    "title": "Najem biura",
+    "tags": [
+      "prawo"
+    ],
+    "party": "Biurowiec Centrum",
+    "start_date": "2025-01-01",
+    "end_date": "2026-12-31",
+    "value": 96000.0
+  },
+  {
+    "kind": "invoice",
+    "doc_id": "FV-003",
+    "title": "Licencje IDE",
+    "tags": [
+      "it",
+      "licencje"
+    ],
+    "net_amount": 2399.99,
+    "due_date": "2026-01-31",
+    "paid": true
+  },
+  {
+    "kind": "contract",
+    "doc_id": "UM-002",
+    "title": "Obsługa prawna",
+    "tags": [
+      "prawo"
+    ],
+    "party": "Kancelaria Nowak",
+    "start_date": "2026-03-01",
+    "end_date": null,
+    "value": 3500.0
+  },
+  {
+    "kind": "contract",
+    "doc_id": "UM-003",
+    "title": "Serwis klimatyzacji",
+    "tags": [
+      "administracja"
+    ],
+    "party": "Chłodnictwo Mróz",
+    "start_date": "2025-03-01",
+    "end_date": "2026-02-28",
+    "value": 4800.0
+  },
+  {
+    "kind": "invoice",
+    "doc_id": "FV-004",
+    "title": "Catering",
+    "tags": [
+      "administracja"
+    ],
+    "net_amount": 812.4,
+    "vat_rate": 0.08,
+    "due_date": "2026-02-28",
+    "paid": false
+  },
+  {
+    "kind": "contract",
+    "doc_id": "UM-004",
+    "title": "Wdrożenie CRM",
+    "tags": [
+      "it"
+    ],
+    "party": "Acme sp. z o.o.",
+    "start_date": "2026-04-01",
+    "end_date": "2026-09-30",
+    "value": 58000.0
+  }
+]
